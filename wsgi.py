@@ -4,4 +4,4 @@ def application(environ, start_response):
         ('Content-Type', 'text/plain')
     ]
     start_response('200 OK', headers)
-    return environ
+    return environ['wsgi.input'].readline().decode()
