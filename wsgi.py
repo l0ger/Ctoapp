@@ -1,3 +1,7 @@
 def application(environ, start_response):
-    start_response('200 OK', [('Content-Type', 'text/plain')])
-    return 'Hello World\n'
+
+    headers = [
+        ('Content-Type', 'text/plain')
+    ]
+    start_response('200 OK', headers)
+    return environ
