@@ -1,1 +1,1 @@
-web: python wsgi.py 80
+web: gunicorn wsgi:application --log-file -
