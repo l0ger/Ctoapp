@@ -1,1 +1,1 @@
-web: bundle exec python server -p 80
+web: bundle exec python server -p $PORT
