@@ -19,7 +19,7 @@ def application(environ, start_response):
 
     # for valid request
     d = json.loads(request_body)
-    Utility.write_dict_record("CollectedData", d)
+    #Utility.write_dict_record("CollectedData", d)
     response_body = unicode.encode(d.get('ip'))
 
     headers = [
