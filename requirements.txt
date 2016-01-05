@@ -1,2 +1,3 @@
 requests==0.11.1
 gunicorn==0.14.2
+freeze
