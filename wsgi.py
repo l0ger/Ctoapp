@@ -19,8 +19,9 @@ def application(environ, start_response):
 
     # for valid request
     d = json.loads(request_body)
-    #Utility.write_dict_record("CollectedData", d)
+    Utility.write_dict_record("CollectedData", d)
     response_body = unicode.encode(d.get('ip'))
+    response_body = Utility.read_test("CollectedData")
 
     headers = [
         ('Content-Type', 'text/plain'),
@@ -30,7 +31,6 @@ def application(environ, start_response):
     start_response('200 OK', headers)
     return response_body
 
-
-#httpd = make_server('localhost', 8000, application)
-#print "Serving on port 8000..."
-#httpd.serve_forever()
+# httpd = make_server('localhost', 8000, application)
+# print "Serving on port 8000..."
+# httpd.serve_forever()
