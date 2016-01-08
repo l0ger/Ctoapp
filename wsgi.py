@@ -4,6 +4,7 @@ import json
 from Utillity import Utility
 from Storage.Box import Box
 
+
 def application(environ, start_response):
     # the environment variable CONTENT_LENGTH may be empty or missing
     try:
@@ -20,9 +21,9 @@ def application(environ, start_response):
     # for valid request
     d = json.loads(request_body)
     Utility.write_dict_record("CollectedData", d)
-    #response_body = unicode.encode(d.get('ip'))
-    box = Box()
-    response_body = box.upload_data("sdsd")
+    response_body = unicode.encode(d.get('ip'))
+    # box = Box()
+    # response_body = box.upload_data("sdsd")
 
     headers = [
         ('Content-Type', 'text/plain'),
@@ -32,7 +33,6 @@ def application(environ, start_response):
     start_response('200 OK', headers)
     return response_body
 
-
-#httpd = make_server('localhost', 8000, application)
-#print "Serving on port 8000..."
-#httpd.serve_forever()
+# httpd = make_server('localhost', 8000, application)
+# print "Serving on port 8000..."
+# httpd.serve_forever()
