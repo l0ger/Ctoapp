@@ -20,10 +20,9 @@ def application(environ, start_response):
 
     # for valid request
     d = json.loads(request_body)
-    Utility.write_dict_record("CollectedData", d)
     response_body = unicode.encode(d.get('ip'))
-    # box = Box()
-    # response_body = box.upload_data("sdsd")
+    box = Box()
+    response_body = box.upload_data("sdsd")
 
     headers = [
         ('Content-Type', 'text/plain'),
