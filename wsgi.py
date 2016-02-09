@@ -35,6 +35,6 @@ def application(environ, start_response):
     start_response('200 OK', headers)
     return response_body
 
-httpd = make_server('localhost', 8000, application)
-print "Serving on port 8000..."
-httpd.serve_forever()
+#httpd = make_server('localhost', 8000, application)
+#print "Serving on port 8000..."
+#httpd.serve_forever()
