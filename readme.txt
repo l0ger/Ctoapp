@@ -11,3 +11,4 @@ Procfile: used for heroku provider
  wsgi.py: the name of this file is important for openshift provider
  openshift provider search in root directory and find wsgi.py then run it.
  ---------------------------------------------------------------------------
+ app.json: this file used by heroku in application creation process
